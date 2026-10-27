@@ -6,6 +6,7 @@ automatically if nobody responds, keeps an append-only record of everything that
 publishes customer-facing updates on a public status page.
 
 **Live demo:** <https://tidewater-jdeq.onrender.com>
+**Video Link:** <https://drive.google.com/file/d/1l5JM8Cbf5uu34M8M1uyq3Q0DPWuTzilW/view?usp=sharing>
 
 > The demo runs on Render's free plan, which sleeps after 15 idle minutes. The first request
 > after a break can take 30 to 60 seconds. Escalation timers do not run while the service sleeps.
