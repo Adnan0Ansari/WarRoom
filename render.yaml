@@ -4,6 +4,7 @@ services:
   - type: web
     name: tidewater
     runtime: docker
+    region: singapore
     plan: free
     healthCheckPath: /api/health
     envVars:
@@ -27,6 +28,7 @@ services:
 
   - type: keyvalue
     name: tidewater-redis
+    region: singapore
     plan: free
     maxmemoryPolicy: noeviction # BullMQ job queues must never lose keys
     ipAllowList: [] # private network only
