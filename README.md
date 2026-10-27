@@ -5,7 +5,7 @@ right people into one shared room, gives each of them a clear role, pages the ne
 automatically if nobody responds, keeps an append-only record of everything that happened, and
 publishes customer-facing updates on a public status page.
 
-**Live demo:** `https://YOUR-SERVICE.onrender.com` (replace with your Render URL)
+**Live demo:** <https://tidewater-jdeq.onrender.com>
 
 > The demo runs on Render's free plan, which sleeps after 15 idle minutes. The first request
 > after a break can take 30 to 60 seconds. Escalation timers do not run while the service sleeps.
@@ -262,7 +262,7 @@ Open the **Integrations** page to see each integration's URL and secret token. P
 tool at:
 
 ```
-POST https://YOUR-SERVICE.onrender.com/api/webhooks/<source>/<token>
+POST https://tidewater-jdeq.onrender.com/api/webhooks/<source>/<token>
 ```
 
 `<source>` is one of the supported sources (Prometheus Alertmanager, Datadog, or custom). Alerts
@@ -303,7 +303,7 @@ MongoDB comes from MongoDB Atlas.
 3. **Render.** Choose **New > Blueprint**, select the repository, give the Blueprint a name, and paste
    the Atlas string when it asks for `MONGO_URI`. Click **Deploy Blueprint**.
 4. **Verify.** When the web service shows **Deployed**, open
-   `https://YOUR-SERVICE.onrender.com/api/health`. You should see `"mongo":true,"redis":true`.
+   `https://tidewater-jdeq.onrender.com/api/health`. You should see `"mongo":true,"redis":true`.
    Then open the site and log in with a [demo account](#demo-accounts).
 
 Later changes deploy automatically: commit and `git push`, and Render rebuilds.
@@ -327,15 +327,13 @@ Later changes deploy automatically: commit and `git push`, and Render rebuilds.
 
 ## Production checklist
 
-- [X] Set a long random `JWT_ACCESS_SECRET` (Render's Blueprint generates one automatically).
-- [X] Set `SEED_DEMO=false`, and set `ADMIN_EMAIL` and `ADMIN_PASSWORD` for the first admin.
-- [X] Set `COOKIE_SECURE=true` and serve over HTTPS.
-- [X] Use real escalation timers, for example `ESC_SECONDS=300,600,900,1800`.
-- [X] Configure `SMTP_*` and `TWILIO_*` so pages actually reach people.
-- [X] Restrict MongoDB Network Access to known addresses where possible, and use a database user
+- [ ] Set a long random `JWT_ACCESS_SECRET` (Render's Blueprint generates one automatically).
+- [ ] Set `SEED_DEMO=false`, and set `ADMIN_EMAIL` and `ADMIN_PASSWORD` for the first admin.
+- [ ] Set `COOKIE_SECURE=true` and serve over HTTPS.
+- [ ] Use real escalation timers, for example `ESC_SECONDS=300,600,900,1800`.
+- [ ] Configure `SMTP_*` and `TWILIO_*` so pages actually reach people.
+- [ ] Restrict MongoDB Network Access to known addresses where possible, and use a database user
       limited to the `warroom` database.
-- [X] Use a paid Render instance so the service does not sleep and timers keep running.
-- [X] Never commit `.env` files. They are already listed in `.gitignore`.
-
-
+- [ ] Use a paid Render instance so the service does not sleep and timers keep running.
+- [ ] Never commit `.env` files. They are already listed in `.gitignore`.
 
